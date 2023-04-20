@@ -23,37 +23,37 @@ public class MainActivity extends AppCompatActivity {
     private ImageView floorPlanImageView;
     private CustomView customView;
     private List<PointF> nodes = Arrays.asList(
-            new PointF(100, 985), // Node 0
-            new PointF(187, 985), // Node 1
-            new PointF(275, 985), // Node 2     Junction
-            new PointF(280, 900), // Node 3     Junction
-            new PointF(280, 770), // Node 4
-            new PointF(280, 640), // Node 5
-            new PointF(280, 500), // Node 6
-            new PointF(410, 500), // Node 7
-            new PointF(550, 500), // Node 8
-            new PointF(685, 500), // Node 9
-            new PointF(830, 500), // Node 10
-            new PointF(835, 640), // Node 11
-            new PointF(835, 770), // Node 12
-            new PointF(835, 895), // Node 13     Junction
-            new PointF(830, 1060), // Node 14    Junction
-            new PointF(825, 1180), // Node 15
-            new PointF(825, 1290), // Node 16
-            new PointF(825, 1385), // Node 17
-            new PointF(685, 1385), // Node 18
-            new PointF(550, 1385), // Node 19
-            new PointF(410, 1385), // Node 20
-            new PointF(280, 1385), // Node 21
-            new PointF(275, 1250), // Node 22
-            new PointF(275, 1120), // Node 23
-            new PointF(930, 895), // Node 24
-            new PointF(1020, 895), // Node 25
-            new PointF(730, 1025), // Node 26
-            new PointF(650, 930), // Node 27
-            new PointF(520, 900), // Node 28
-            new PointF(460, 970), // Node 29
-            new PointF(370, 940) // Node 30
+            new PointF(100, 985+75), // Node 0
+            new PointF(187, 985+75), // Node 1
+            new PointF(275, 985+75), // Node 2     Junction
+            new PointF(280, 900+75), // Node 3     Junction
+            new PointF(280, 770+75), // Node 4
+            new PointF(280, 640+75), // Node 5
+            new PointF(280, 500+75), // Node 6
+            new PointF(410, 500+75), // Node 7
+            new PointF(550, 500+75), // Node 8
+            new PointF(685, 500+75), // Node 9
+            new PointF(830, 500+75), // Node 10
+            new PointF(835, 640+75), // Node 11
+            new PointF(835, 770+75), // Node 12
+            new PointF(835, 895+75), // Node 13     Junction
+            new PointF(830, 1060+75), // Node 14    Junction
+            new PointF(825, 1180+75), // Node 15
+            new PointF(825, 1290+75), // Node 16
+            new PointF(825, 1385+75), // Node 17
+            new PointF(685, 1385+75), // Node 18
+            new PointF(550, 1385+75), // Node 19
+            new PointF(410, 1385+75), // Node 20
+            new PointF(280, 1385+75), // Node 21
+            new PointF(275, 1250+75), // Node 22
+            new PointF(275, 1120+75), // Node 23
+            new PointF(930, 895+75), // Node 24
+            new PointF(1020, 895+75), // Node 25
+            new PointF(730, 1025+75), // Node 26
+            new PointF(650, 930+75), // Node 27
+            new PointF(520, 900+75), // Node 28
+            new PointF(460, 970+75), // Node 29
+            new PointF(370, 940+75) // Node 30
             // Add more nodes here as needed
     );
 
