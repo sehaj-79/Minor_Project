@@ -1,12 +1,14 @@
 package com.aliferous.minorproject;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.PointF;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,7 +21,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity {
+
+    int node1, node2;
     private ImageView floorPlanImageView;
     private CustomView customView;
     private List<PointF> nodes = Arrays.asList(
@@ -59,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
     private List<Pair<PointF, PointF>> edges = Arrays.asList(
             // Define edges between nodes as pairs of PointF objects
-            new Pair<>(nodes.get(0), nodes.get(1)), 
+            new Pair<>(nodes.get(0), nodes.get(1)),
             new Pair<>(nodes.get(1), nodes.get(2)),
             new Pair<>(nodes.get(2), nodes.get(3)),
             new Pair<>(nodes.get(3), nodes.get(4)),
@@ -94,6 +98,25 @@ public class MainActivity extends AppCompatActivity {
 
     );
 
+    private void calculateShortestPath() {
+        try {
+            int sourceNodeIndex = node1;
+            int destinationNodeIndex = node2;
+
+            if (sourceNodeIndex < 0 || sourceNodeIndex >= nodes.size() ||
+                    destinationNodeIndex < 0 || destinationNodeIndex >= nodes.size()) {
+                Toast.makeText(MainActivity2.this, "Invalid node numbers", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            PointF sourceNode = nodes.get(sourceNodeIndex);
+            PointF destinationNode = nodes.get(destinationNodeIndex);
+            path = findPath(sourceNode, destinationNode, nodes);
+            customView.setPath(path);
+        } catch (NumberFormatException e) {
+            Toast.makeText(MainActivity2.this, "Invalid input", Toast.LENGTH_SHORT).show();
+        }
+    }
 
     private List<PointF> getNeighbors(PointF node) {
         List<PointF> neighbors = new ArrayList<>();
@@ -112,16 +135,23 @@ public class MainActivity extends AppCompatActivity {
     private PointF destinationNode;
     private List<PointF> path;
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint("MissingInflatedId , ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
+
+        Intent intent = getIntent();
+        node1 = intent.getIntExtra("node1", 0);
+        node2 = intent.getIntExtra("node2", 0);
 
         floorPlanImageView = findViewById(R.id.floorPlanImageView);
         customView = findViewById(R.id.customView);
 
         customView.setNodes(nodes);
+
+        calculateShortestPath();
+
 
         floorPlanImageView.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -149,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
     private PointF nearestNode(PointF location) {
         PointF closestNode = null;

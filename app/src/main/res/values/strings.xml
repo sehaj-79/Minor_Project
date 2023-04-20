@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">Minor Project</string>
+
+    <string-array name="locations1">
+        <item>Enter your current location</item>
+        <item>AB1 Entrance</item>
+        <item>DSW</item>
+        <item>Cheffies</item>
+        <item>ICICI Bank</item>
+        <item>AB1 Exit</item>
+        <item>Lift Lobby</item>
+        <item>Washroom</item>
+    </string-array>
+
+    <string-array name="locations2">
+        <item>Enter your desired destination</item>
+        <item>AB1 Entrance</item>
+        <item>DSW</item>
+        <item>Cheffies</item>
+        <item>ICICI Bank</item>
+        <item>AB1 Exit</item>
+        <item>Lift Lobby</item>
+        <item>Washroom</item>
+    </string-array>
+
+
 </resources>
