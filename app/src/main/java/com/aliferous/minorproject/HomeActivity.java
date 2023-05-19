@@ -8,11 +8,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
 
     Spinner s1, s2;
     Button button;
+    TextView viewmap;
     String string1 = "", string2 = "";
     int node1 = 0, node2 = 0;
 
@@ -23,8 +25,19 @@ public class HomeActivity extends AppCompatActivity {
 
         s1 = findViewById(R.id.spinner1);
         s2 = findViewById(R.id.spinner2);
+        viewmap = findViewById(R.id.viewmap);
         button = findViewById(R.id.button);
         button.setEnabled(false);
+
+
+        viewmap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
